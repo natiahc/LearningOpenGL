@@ -61,6 +61,7 @@ int main(void)
 			2, 3, 0
 		};
 
+		//Blending for better texture rendering with transperant image
 		GLCall(glEnable(GL_BLEND));
 		GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
@@ -81,7 +82,7 @@ int main(void)
 		shader.Bind();
 		shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
-		Texture texture("res/textures/texture_image.jpg");
+		Texture texture("res/textures/teapot.png");
 		texture.Bind();
 		shader.SetUniform1i("u_Texture", 0);
 
